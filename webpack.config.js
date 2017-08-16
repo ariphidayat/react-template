@@ -23,10 +23,6 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract('css-loader')
-            },
-            {
-                test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                loader: 'file-loader',
             }
         ],
     },
@@ -39,9 +35,10 @@ module.exports = {
         }),
         new ExtractTextPlugin("[name].css"),
         new webpack.ProvidePlugin({   
-            jQuery: 'jquery',
             $: 'jquery',
-            jquery: 'jquery'
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default']
         })
     ]
 }
