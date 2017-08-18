@@ -10,7 +10,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: '[hash].js'
     },
 
     module: {
@@ -22,7 +22,11 @@ module.exports = {
             },
             {
                 test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                loader: 'file-loader'
+                loader: 'file-loader',
+                options: {
+                  name: '[hash].[ext]',
+                  outputPath: 'fonts/' //where the files will go
+                }
             },
             {
                 test: /\.css$/,
@@ -37,7 +41,7 @@ module.exports = {
             filename: 'index.html',
             inject: 'body'
         }),
-        new ExtractTextPlugin("[name].css"),
+        new ExtractTextPlugin("[hash].css"),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
