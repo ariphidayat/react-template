@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
+const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -9,6 +10,8 @@ module.exports = {
     },
 
     devServer: {
+      contentBase: path.join(__dirname, "dist"),
+      compress: true,
       hot: true
     },
 
@@ -45,6 +48,7 @@ module.exports = {
             filename: 'index.html',
             inject: 'body'
         }),
+        new CleanPlugin(['dist']),
         new ExtractTextPlugin("[hash].css"),
         new webpack.ProvidePlugin({
             $: 'jquery',
