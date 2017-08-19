@@ -11,19 +11,19 @@ This project is a React Application using ES6, Yarn and Webpack. For better unde
 ## Installation
 1. Clone this project or download Zip file
 
-	`git clone https://github.com/ariphidayat/react-template.git`
+	$ git clone https://github.com/ariphidayat/react-template.git
 
-2. Make sure you have installed Node.js and npm. For more detail: 	[https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+2. Make sure you have installed **Node.js** and **npm**. For more detail: 	[https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
 ### Run Project
 On command prompt, run the following command:
 
-	`$ cd react-template`
+	$ cd react-template
 
-	`$ yarn install`
+	$ yarn install
 
-	`$ yarn start`
+	$ yarn start
 
 ### Build Project
 
-	`yarn bundle`
+	$ yarn bundle
