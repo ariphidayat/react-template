@@ -8,6 +8,10 @@ module.exports = {
         main: './src/index.js'
     },
 
+    devServer: {
+      hot: true
+    },
+
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[hash].js'
@@ -47,6 +51,7 @@ module.exports = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             Popper: ['popper.js', 'default']
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }

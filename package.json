@@ -4,7 +4,7 @@
   "description": "React Template Project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --hot --open",
     "bundle": "webpack"
   },
   "author": "Arip Hidayat",
