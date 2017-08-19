@@ -6,6 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
+        a: ['jquery', 'bootstrap', 'popper.js'],
+        b: ['react', 'react-dom'],
         main: './src/index.js'
     },
 
@@ -55,6 +57,10 @@ module.exports = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             Popper: ['popper.js', 'default']
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['common', 'a', 'b'],
+            filename: '[name][hash].js'
         }),
         new webpack.HotModuleReplacementPlugin()
     ]
