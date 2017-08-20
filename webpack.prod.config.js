@@ -1,9 +1,9 @@
+const webpack = require('webpack');
 const Merge = require('webpack-merge');
-const ZopfliPlugin = require('zopfli-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
 const CommonConfig = require('./webpack.config.js');
 
 module.exports = Merge(CommonConfig, {
-  devtool: 'cheap-module-source-map',
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
@@ -22,9 +22,9 @@ module.exports = Merge(CommonConfig, {
       },
       exclude: [/\.min\.js$/gi] // skip pre-minified libs
     }),
-    new ZopfliPlugin({
+    new CompressionPlugin({
       asset: "[path].gz[query]",
-      algorithm: "zopfli",
+      algorithm: "gzip",
       test: /\.(js|html)$/,
       threshold: 10240,
       minRatio: 0.8
