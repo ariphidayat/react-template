@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const Merge = require('webpack-merge');
 const CompressionPlugin = require("compression-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CommonConfig = require('./webpack.config.js');
 
 module.exports = Merge(CommonConfig, {
@@ -28,6 +29,7 @@ module.exports = Merge(CommonConfig, {
       test: /\.(js|html)$/,
       threshold: 10240,
       minRatio: 0.8
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ]
 })
