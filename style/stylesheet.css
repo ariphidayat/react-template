@@ -51,52 +51,63 @@ body {
 .sidebar a:hover {
   text-decoration: none;
 }
-.sidebar-menu > li.header {
+.sidebar-menu > div.header {
   color: #848484;
   padding: 15px 5px 3px;
   font-size: 12px;
 }
-.sidebar-menu > li > a,
-.sidebar-menu .treeview-menu > li > a {
+.sidebar-menu > div > a,
+.sidebar-menu .treeview-menu > div > a {
   padding: 3px 5px;
   display: block;
   font-weight: 500;
 }
-.sidebar-menu > li:hover > a,
-.sidebar-menu > li.active > a {
+.sidebar-menu > div:hover > a,
+.sidebar-menu > div.active > a {
   background: #f5f5f5;
 }
-.sidebar-menu > li:hover > a[aria-expanded=true] {
+.sidebar-menu a[aria-expanded=true] {
   background: none;
 }
-.sidebar-menu > li > a[aria-expanded=true] > span > i {
+.sidebar-menu a[aria-expanded=true] i {
   transform: rotate(-90deg);
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
 }
-.sidebar-menu > li > a > .fa {
+.sidebar-menu a > .fa {
   width: 20px;
 }
-.sidebar-menu > li > a > .badge,
+.sidebar-menu a > .badge,
 .fa-angle-left.pull-right {
   margin-top: 3px;
-}
-.sidebar-menu li.active > .treeview-menu {
-  display: block;
 }
 .sidebar-menu .treeview-menu {
   list-style: none;
   padding-left: 0;
 }
-.sidebar-menu > .treeview-menu > li {
-  margin: 0;
-}
-.sidebar-menu .treeview-menu > li > a {
+.sidebar-menu .treeview-menu > div a {
   font-weight: 400;
 }
-.treeview-menu > li.active > a,
-.treeview-menu > li:hover > a {
+.treeview-menu > div.active > a,
+.treeview-menu > div:hover > a {
   background: #f5f5f5;
+}
+
+@media (max-width: 767px) {
+  .sidebar-menu {
+    display: block;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .sidebar-menu > div {
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .sidebar-menu > div.header,
+  .sidebar-menu a > span.badge {
+    display: none;
+  }
 }
 
 /*
