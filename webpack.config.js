@@ -40,7 +40,9 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('css-loader')
+                loader: process.env.NODE_ENV === 'production' ?
+                  ExtractTextPlugin.extract('css-loader') :
+                  ['style-loader', 'css-loader']
             }
         ],
     },
