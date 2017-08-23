@@ -92,7 +92,7 @@ body {
 
 @media (max-width: 767px) {
   .sidebar {
-    background: #f5f5f5;
+    background: #343a40;
     margin-bottom: 20px;
   }
   .sidebar-menu {
@@ -101,20 +101,25 @@ body {
     white-space: nowrap;
     display: block;
   }
-  .sidebar-menu a {
-    padding: 5px 8px;
+  .sidebar-menu a,
+  .sidebar-menu a:visited {
+    padding: 5px 12px;
     display: inline-block;
+    background: #343a40;
+    color: rgba(255,255,255,.5);
+    font-weight: normal;
   }
   .treeview-menu {
     position: absolute;
-    background: #f5f5f5;
+    background: #343a40;
     z-index: 10;
     left: 0;
     right: 0;
     text-align: center;
   }
-  .treeview-menu > div a:hover {
-    background: #f1f1f1;
+  .treeview-menu > div > a:visited {
+    color: #fff;
+    background: #343a40;
   }
   .sidebar-menu > div.header,
   .sidebar-menu a > span.badge {
