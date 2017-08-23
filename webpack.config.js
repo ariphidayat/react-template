@@ -20,7 +20,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[hash].js'
+        filename: 'js/[hash].js'
     },
 
     module: {
@@ -35,13 +35,16 @@ module.exports = {
                 loader: 'file-loader',
                 options: {
                   name: '[hash].[ext]',
-                  outputPath: 'fonts/' //where the files will go
+                  outputPath: './fonts/' //where the files will go
                 }
             },
             {
                 test: /\.css$/,
                 loader: process.env.NODE_ENV === 'production' ?
-                  ExtractTextPlugin.extract('css-loader') :
+                  ExtractTextPlugin.extract({
+                    use: 'css-loader',
+                    publicPath: '.'
+                  }) :
                   ['style-loader', 'css-loader']
             }
         ],
@@ -54,7 +57,7 @@ module.exports = {
             inject: 'body'
         }),
         new CleanPlugin(['dist']),
-        new ExtractTextPlugin("[hash].css"),
+        new ExtractTextPlugin("css/[hash].css"),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
@@ -63,7 +66,7 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['common', 'a', 'b'],
-            filename: '[name][hash].js'
+            filename: 'js/[name][hash].js'
         }),
         new webpack.HotModuleReplacementPlugin()
     ]
