@@ -1,7 +1,7 @@
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import '../style/stylesheet.css';
+import './css/main.css';
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
