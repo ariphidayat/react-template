@@ -11,6 +11,14 @@ export default class MediaContainer extends Component {
       body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
     }
   }
+
+  componentDidMount() {
+    this.setState({
+      subject: 'New Subject',
+      body: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...'
+    })
+  }
+
   render() {
     return (
       <section className="col-md-7">
