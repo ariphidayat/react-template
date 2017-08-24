@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Media from './media';
+import {Media} from './media';
 import arip from '../images/arip.jpg';
 
 export default class MediaContainer extends Component {
