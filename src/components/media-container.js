@@ -3,20 +3,21 @@ import {Media} from './media';
 import arip from '../images/arip.jpg';
 
 export default class MediaContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      img: '../images/arip.jpg',
+      subject: 'Subject',
+      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit...'
+    }
+  }
   render() {
     return (
       <section className="col-md-7">
         <div className="media-container">
-          <Media
-            img={arip}
-            subject={"Subject"}
-            body={`Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
-            />
+          <Media  img={this.state.img}
+                  subject={this.state.subject}
+                  body={this.state.body}/>
         </div>
       </section>
     )
