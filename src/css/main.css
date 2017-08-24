@@ -36,20 +36,20 @@ body {
 /*
  * Left Sidebar
  */
-.sidebar {
-  padding: 0px 5px 0px 10px;
-}
-.sidebar a {
-  color: #444;
-  padding-right: 0;
-}
-.sidebar a:hover {
-  text-decoration: none;
-}
 .sticky-top,
 .sidebar-menu {
   position: sticky;
 	top: 65px;
+}
+.sidebar-menu {
+  padding: 0px 5px 0px 10px;
+}
+.sidebar-menu a {
+  color: #444;
+  padding-right: 0;
+}
+.sidebar-menu a:hover {
+  text-decoration: none;
 }
 .sidebar-menu > .header {
   color: #848484;
@@ -93,7 +93,8 @@ body {
 @media (max-width: 767px) {
   .sidebar {
     background: #343a40;
-    margin-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .sidebar-menu {
     position: static;
@@ -101,13 +102,16 @@ body {
     white-space: nowrap;
     display: block;
   }
-  .sidebar-menu a,
-  .sidebar-menu a:visited {
+  .sidebar-menu a {
     padding: 5px 12px;
     display: inline-block;
     background: #343a40;
     color: rgba(255,255,255,.5);
     font-weight: normal;
+  }
+  .sidebar-menu a:hover {
+    background: #343a40;
+    color: #ffffff;
   }
   .treeview-menu {
     position: absolute;
@@ -134,10 +138,10 @@ body {
  * Media Container
  */
 .media-container {
-  padding-left: 0;
+  margin-top: 10px;
 }
-.media-container > li {
-  margin-bottom: 20px;
+.media-container > div {
+  margin-bottom: 15px;
 }
 .media {
   background: url('../images/inflicted.png')
