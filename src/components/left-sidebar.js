@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 export default class LeftSidebar extends Component {
   render() {
     return (
       <aside className="col-md-2 sidebar">
         <div className="navbar-nav sidebar-menu">
-          <a href="#"><span className="fa fa-newspaper-o"/>News Feed</a>
+          <Link to="/"><span className="fa fa-newspaper-o"/>Home</Link>
           <a href="#"><span className="fa fa-envelope-o"/>Inbox
             <span className="badge badge-secondary pull-right">17</span>
           </a>
