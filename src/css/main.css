@@ -116,7 +116,7 @@ body {
   .treeview-menu {
     position: absolute;
     background: #343a40;
-    z-index: 10;
+    z-index: 1029;
     left: 0;
     right: 0;
     text-align: center;
@@ -143,6 +143,14 @@ body {
 .media-container > div {
   margin-bottom: 15px;
 }
-.media {
+
+/*
+ * No Match
+ */
+body .no-match {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: url('../images/inflicted.png')
 }

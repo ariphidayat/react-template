@@ -1,7 +1,9 @@
 import React from 'react';
 
-export const NoMatch = () => (
-  <section className="col-md-7">
-    <h1>This page is not available!</h1>
-  </section>
+const NoMatch = () => (
+  <div className="no-match">
+    <h1><span className="fa fa-frown-o"/>   This page is not available!</h1>
+  </div>
 )
+
+export default NoMatch;

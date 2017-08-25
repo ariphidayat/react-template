@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-import {Media} from './media';
-import arip from '../images/arip.jpg';
+import React, { Component } from 'react';
+import Media from './media';
 
 export default class MediaContainer extends Component {
   constructor(props) {
@@ -23,7 +22,7 @@ export default class MediaContainer extends Component {
     return (
       <section className="col-md-7">
         <div className="media-container">
-          <Media  img={this.state.img}
+          <Media  img={'../images/arip.jpg'}
                   subject={this.state.subject}
                   body={this.state.body}/>
         </div>
