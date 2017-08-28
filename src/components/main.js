@@ -1,16 +1,19 @@
-import React from 'react';
-import LeftSidebar from './left-sidebar';
-import MediaContainer from './media-container'
-import RightSidebar from './right-sidebar'
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import Home from './Home'
+import Content from './Content'
+import Register from './Register'
+import NotFound from './NotFound'
 
 const Main = () => (
-  <main className="container">
-    <div className="row">
-      <LeftSidebar/>
-      <MediaContainer/>
-      <RightSidebar/>
-    </div>
+  <main>
+    <Switch>
+      <Route exact path='/' component={Home}/>
+      <Route path='/content' component={Content}/>
+      <Route path='/register' component={Register}/>
+      <Route component={NotFound}/>
+    </Switch>
   </main>
 )
 
-export default Main;
+export default Main
