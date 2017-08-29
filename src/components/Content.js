@@ -9,15 +9,15 @@ import Trending from './Trending'
 import NotFound from './NotFound'
 
 const Content = ({ match }) => (
-  <div>
+  <div className="row">
     <LeftSidebar/>
     <Switch>
       <Route path={`${match.url}/timeline`} component={Timeline}/>
       <Route path={`${match.url}/people`} component={People}/>
       <Route path={`${match.url}/inbox`} component={Inbox}/>
       <Route path={`${match.url}/trending`} component={Trending}/>
+      <Redirect exact path={match.url} to={`${match.url}/timeline`}/>
       <Route component={NotFound}/>
-      <Redirect path={match.url} to={`${match.url}/timeline`}/>
     </Switch>
     <RightSidebar/>
   </div>

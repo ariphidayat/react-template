@@ -1,7 +1,11 @@
 import React from 'react'
 
 const Footer = () => (
-  <footer>Footer content here.</footer>
+  <footer className="footer">
+    <div className="container">
+      <span className="text-muted">Sticky footer content here.</span>
+    </div>
+  </footer>
 )
 
 export default Footer

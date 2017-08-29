@@ -41,9 +41,6 @@ body {
   position: sticky;
 	top: 65px;
 }
-.sidebar-menu {
-  padding: 0px 5px 0px 10px;
-}
 .sidebar-menu a {
   color: #444;
   padding-right: 0;
@@ -88,6 +85,11 @@ body {
 .treeview-menu > div.active > a,
 .treeview-menu > div:hover > a {
   background: #f5f5f5;
+}
+
+.card {
+  margin: 10px 5px 10px 10px;
+  border-radius: 0;
 }
 
 @media (max-width: 767px) {
@@ -137,11 +139,11 @@ body {
 /*
  * Media Container
  */
-.media-container {
+.content-container {
   margin-top: 10px;
 }
-.media-container > div {
-  margin-bottom: 15px;
+.content-container > div {
+  margin-bottom: 20px;
 }
 
 /*
@@ -154,7 +156,7 @@ body {
 /*
  * No Match
  */
-body .no-match {
+body .not-found {
   position: absolute;
   top: 50%;
   left: 50%;

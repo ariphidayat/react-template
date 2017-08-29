@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Inbox = () => (
-  <h2>Inbox!</h2>
+  <section className="col-md-7">
+    <h2>Inbox!</h2>
+  </section>
 )
 
 export default Inbox

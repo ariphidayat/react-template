@@ -1,7 +1,9 @@
 import React from 'react'
 
 const NotFound = () => (
-  <h1>404 | Not Found</h1>
+  <div className="not-found">
+    <h1><span className="fa fa-frown-o"/> This page is not available!</h1>
+  </div>
 )
 
 export default NotFound
