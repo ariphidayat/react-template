@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import * as actions from '../actions'
+import * as peopleActions from '../actions/peopleActions'
 
 class People extends Component {
   componentWillMount() {
     this.props.fetchPeople()
   }
 
-  renderPeople(people) {
+  renderPeople(people, i) {
     return (
-      <div className="card">
+      <div key={i} className="card">
         <img className="card-img-top" src="http://via.placeholder.com/204x204"/>
         <div className="card-body">
           <h5 className="card-title">{people.name}</h5>
@@ -24,7 +24,7 @@ class People extends Component {
     return (
       <section className="col-md-7">
         <div className="row">
-          {this.props.people.map(this.renderPeople)}
+          {this.props.people.map((p, i) => this.renderPeople(p, i))}
         </div>
       </section>
     )
@@ -35,4 +35,4 @@ function mapStateToProps(state) {
   return { people: state.people }
 }
 
-export default connect(mapStateToProps, actions)(People)
+export default connect(mapStateToProps, peopleActions)(People)
