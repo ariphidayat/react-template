@@ -6,18 +6,12 @@ import 'bootstrap';
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router} from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import thunk from 'redux-thunk'
+import configureStore from './store/configureStore';
 
 import App from './components/App'
-import rootReducer from './reducers'
 
-const store = createStore(
-  rootReducer,
-  applyMiddleware(thunk)
-);
-
+const store = configureStore();
 render((
   <Provider store={store}>
     <Router>
