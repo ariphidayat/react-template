@@ -13,7 +13,6 @@ const Header = () => (
       </button>
       <div className="collapse navbar-collapse" id="navbarCollapse">
         <ul className="navbar-nav ml-auto">
-            <li className="nav-item"><Link to='/content' className="nav-link">Content</Link></li>
             <li className="nav-item"><Link to='/signin' className="nav-link">Sign In</Link></li>
             <li className="nav-item"><Link to="/register" className="nav-link">Register</Link></li>
         </ul>

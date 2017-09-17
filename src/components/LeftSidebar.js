@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 const LeftSidebar = () => (
   <aside className="col-md-2 sidebar">
     <div className="navbar-nav sidebar-menu">
-      <Link to='/content/timeline'><span className="fa fa-newspaper-o"/>Timeline</Link>
-      <Link to='/content/people'><span className="fa fa-user-circle-o"/>People</Link>
-      <Link to='/content/inbox'><span className="fa fa-envelope-o"/>Inbox
+      <Link to='/'><span className="fa fa-newspaper-o"/>Timeline</Link>
+      <Link to='/people'><span className="fa fa-user-circle-o"/>People</Link>
+      <Link to='/inbox'><span className="fa fa-envelope-o"/>Inbox
         <span className="badge badge-secondary pull-right">10</span>
       </Link>
       <div className="header">GROUP</div>

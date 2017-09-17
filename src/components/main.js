@@ -1,19 +1,25 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
-import Home from './Home'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Content from './Content'
+import Timeline from './Timeline'
+import People from './People'
+import Inbox from './Inbox'
+import Trending from './Trending'
 import SignIn from './SignIn'
 import Register from './Register'
-import NotFound from './NotFound'
 
 const Main = () => (
   <main className="container">
     <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route path='/content' component={Content}/>
+      <Redirect exact path='/' to='/timeline'/>
       <Route path='/signin' component={SignIn}/>
       <Route path='/register' component={Register}/>
-      <Route component={NotFound}/>
+      <Content>
+        <Route exact path='/timeline' component={Timeline}/>
+        <Route path='/people' component={People}/>
+        <Route path='/inbox' component={Inbox}/>
+        <Route path='/trending' component={Trending}/>
+      </Content>
     </Switch>
   </main>
 )
