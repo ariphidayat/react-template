@@ -38,4 +38,12 @@ function mapStateToProps(state) {
   return { people: state.people }
 }
 
-export default connect(mapStateToProps, peopleActions)(People)
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchPeople() {
+      dispatch(peopleActions.fetchPeople())
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(People)
