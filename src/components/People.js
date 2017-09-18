@@ -34,15 +34,13 @@ class People extends Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   return { people: state.people }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
   return {
-    fetchPeople() {
-      dispatch(peopleActions.fetchPeople())
-    }
+    fetchPeople: () => dispatch(peopleActions.fetchPeople())
   }
 }
 
