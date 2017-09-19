@@ -27,8 +27,8 @@ class PeopleDetail extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { people: state.people }
+const mapStateToProps = ({ people }) => {
+  return { people }
 }
 
 const mapDispatchToProps = dispatch => {
