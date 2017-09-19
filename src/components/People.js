@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import * as peopleActions from '../actions/peopleActions'
+import { bindActionCreators } from 'redux'
+import { fetchPeople } from '../actions/peopleActions'
 
 class People extends Component {
   componentWillMount() {
@@ -46,9 +47,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
-    fetchPeople: () => dispatch(peopleActions.fetchPeople())
-  }
+  return bindActionCreators({ fetchPeople }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(People)
