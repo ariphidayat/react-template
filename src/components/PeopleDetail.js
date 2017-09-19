@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import * as peopleActions from '../actions/peopleActions'
+import { bindActionCreators } from 'redux'
+import { fetchPeopleById } from '../actions/peopleActions'
 
 class PeopleDetail extends Component {
   componentDidMount() {
@@ -8,6 +9,7 @@ class PeopleDetail extends Component {
   }
 
   render() {
+    const people = this.props.people
     return (
       <section className="col-md-7 content-container">
         <div className="row">
@@ -15,8 +17,8 @@ class PeopleDetail extends Component {
             <img src="http://via.placeholder.com/204x204"/>
           </div>
           <div className="col-md-8">
-              <h2>{this.props.people.name}</h2>
-              <p>{this.props.people.email}</p>
+              <h2>{people.name}</h2>
+              <p>{people.email}</p>
               <a href="#" className="btn btn-primary">Follow</a>
           </div>
         </div>
@@ -30,9 +32,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
-    fetchPeopleById: peopleId => dispatch(peopleActions.fetchPeopleById(peopleId))
-  }
+  return bindActionCreators({ fetchPeopleById }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PeopleDetail)
