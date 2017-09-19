@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as peopleActions from '../actions/peopleActions'
 
@@ -15,7 +16,9 @@ class People extends Component {
       <div key={i} className="card">
         <img className="card-img-top" src="http://via.placeholder.com/204x204"/>
         <div className="card-body">
-          <h5 className="card-title">{name}</h5>
+          <h5 className="card-title">
+            <Link to={`/people/${people.id}`}>{name}</Link>
+          </h5>
           <p className="card-text"><small>{email}</small></p>
           <a href="#" className="btn btn-primary">Follow</a>
         </div>
@@ -27,7 +30,7 @@ class People extends Component {
     return (
       <section className="col-md-7">
         <div className="row">
-          {this.props.people.map((p, i) => this.renderPeople(p, i))}
+          {this.props.peoples.map((p, i) => this.renderPeople(p, i))}
         </div>
       </section>
     )
@@ -35,7 +38,7 @@ class People extends Component {
 }
 
 const mapStateToProps = state => {
-  return { people: state.people }
+  return { peoples: state.peoples }
 }
 
 const mapDispatchToProps = dispatch => {
