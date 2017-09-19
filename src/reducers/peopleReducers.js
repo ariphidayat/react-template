@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes'
 export const peoplesReducer = (state = [], action) => {
   switch (action.type) {
     case actionTypes.FETCH_PEOPLE:
-      return action.peoples
+      return action.payload
     default:
       return state
   }
@@ -12,7 +12,7 @@ export const peoplesReducer = (state = [], action) => {
 export const peopleReducer = (state = [], action) => {
   switch (action.type) {
     case actionTypes.FETCH_PEOPLE_BY_ID:
-      return action.people
+      return action.payload
     default:
       return state
   }

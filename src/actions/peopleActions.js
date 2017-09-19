@@ -7,7 +7,7 @@ export const fetchPeople = () => {
       .then(response => {
         dispatch({
           type: actionTypes.FETCH_PEOPLE,
-          peoples: response.data
+          payload: response.data
         })
       })
       .catch(error => {
@@ -22,7 +22,7 @@ export const fetchPeopleById = peopleId => {
       .then(response => {
         dispatch({
           type: actionTypes.FETCH_PEOPLE_BY_ID,
-          people: response.data
+          payload: response.data
         })
       })
       .catch(error => {
