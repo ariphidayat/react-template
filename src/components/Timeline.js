@@ -11,9 +11,9 @@ class Timeline extends Component {
   }
 
   renderPost() {
-    return this.props.posts.map(post => {
+    return this.props.posts.map((post, i) => {
       return (
-        <Post post={post}/>
+        <Post key={i} post={post}/>
       )
     })
   }

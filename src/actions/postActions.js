@@ -15,3 +15,18 @@ export const fetchPost = () => {
       })
   }
 }
+
+export const createPost = (post) => {
+  return (dispatch) => {
+    return axios.post('https://jsonplaceholder.typicode.com/posts', post)
+      .then(response => {
+        dispatch({
+          type: actionTypes.CREATE_POST,
+          payload: response.data
+        })
+      })
+      .catch(error => {
+        throw(error);
+      });
+  };
+};

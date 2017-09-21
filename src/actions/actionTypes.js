@@ -2,3 +2,4 @@ export const FETCH_PEOPLE = 'FETCH_PEOPLE'
 export const FETCH_PEOPLE_BY_ID = 'FETCH_PEOPLE_BY_ID'
 
 export const FETCH_POST = 'FETCH_POST'
+export const CREATE_POST = 'CREATE_POST'
