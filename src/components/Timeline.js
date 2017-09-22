@@ -4,16 +4,19 @@ import { bindActionCreators } from 'redux'
 import { fetchPost } from '../actions/postActions'
 import PostForm from './PostForm'
 import Post from './Post'
+import Modal from './Modal'
 
 class Timeline extends Component {
   componentWillMount() {
     this.props.fetchPost()
+
+    this.state = { message: ''}
   }
 
   renderPost() {
     return this.props.posts.map((post, i) => {
       return (
-        <Post key={i} post={post}/>
+        <Post key={i} post={post} message={(message) => this.setState({message})}/>
       )
     })
   }
@@ -23,6 +26,7 @@ class Timeline extends Component {
       <section className="col-md-7 content-container">
         <PostForm/>
         {this.renderPost()}
+        <Modal message={this.state.message}/>
       </section>
     )
   }
