@@ -21,12 +21,16 @@ class PostForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="form-post">
-        <div className="form-group">
-          <textarea ref="post" rows="3" className="form-control" placeholder="Write something.."/>
-        </div>
-        <button type="submit" className="btn btn-primary pull-right">Publish</button>
-      </form>
+      <div className="box">
+        <form onSubmit={this.onFormSubmit}>
+          <div className="box-body">
+            <textarea ref="post" rows="3" className="form-control" placeholder="Write something.."/>
+          </div>
+          <div className="box-footer">
+            <button type="submit" className="btn btn-primary">Publish</button>
+          </div>
+        </form>
+      </div>
     )
   }
 }
