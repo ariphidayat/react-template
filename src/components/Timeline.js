@@ -7,10 +7,12 @@ import Post from './Post'
 import Modal from './Modal'
 
 class Timeline extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { message: ''}
+  }
   componentWillMount() {
     this.props.fetchPost()
-
-    this.state = { message: ''}
   }
 
   renderPost() {
